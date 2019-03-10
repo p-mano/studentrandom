@@ -1,0 +1,43 @@
+<div >
+  <input type="button" value="Delete All Student" (click)="DeleteAllStudent()">
+</div>
+
+<div>
+<table>
+<thead>
+  <tr>
+    <td>id</td>
+    <td>FirstName</td>
+    <td>LastName</td>
+    <td>Email</td>
+    <td>Phone</td>
+    <td>Delete Student</td>
+    <td>select Student</td>
+  </tr>
+</thead>
+<tbody>
+  <tr *ngFor="let student of students">
+       <td>{{student.id}}</td>
+       <td>{{student.firstname}}</td>
+       <td>{{student.lastname}}</td>
+    <td>{{student.email}}</td>
+    <td>{{student.phone}}</td>
+    <td><input type="button" value="Delete Student" (click)="deleteStudent(student.id)"></td>
+    <td><input type="button" value="Select Student" (click)="SelectStudent(student)"></td>
+  </tr>
+</tbody>
+</table>
+
+</div>
+
+
+<div>
+  <input readonly type="text" placeholder="id" [(ngModel)]="student.id" name="" ><br>
+  <input type="text" placeholder="first name" [(ngModel)]="student.firstname" name="" ><br>
+  <input type="text" placeholder="last name" [(ngModel)]="student.lastname" name="" ><br>
+  <input type="text" placeholder="email" [(ngModel)]="student.email" name="" ><br>
+  <input type="text" placeholder="phone" [(ngModel)]="student.phone" name="" ><br>
+
+  <input type="button" value="Add/Update Student" (click)="UpdateStudent()">
+  
+</div>
